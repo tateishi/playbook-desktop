@@ -1,0 +1,5 @@
+---
+# defaults file for sudoers
+
+default_user: "ubuntu"
+sudoers_configuration_file: "/etc/sudoers.d/10-ubuntu"

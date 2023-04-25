@@ -1,0 +1,4 @@
+- hosts: target
+  roles:
+    - name: docker configuration
+      role: docker

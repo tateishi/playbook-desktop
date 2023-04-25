@@ -1,0 +1,10 @@
+---
+# tasks file for sudoers
+
+- name: sudoers configuration
+  become: true
+  template:
+    src: sudoers.j2
+    dest: "{{ sudoers_configuration_file }}"
+    owner: "root"
+    group: "root"

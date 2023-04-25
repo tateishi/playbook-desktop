@@ -1,0 +1,5 @@
+- name: sudoers configurations
+  hosts: target
+  roles:
+    - name: sudoers
+      role: sudoers

@@ -1,0 +1,4 @@
+- import_playbook: playbooks/keyboard.yml
+- import_playbook: playbooks/sudoers.yml
+- import_playbook: playbooks/regular.yml
+- import_playbook: playbooks/docker.yml

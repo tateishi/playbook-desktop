@@ -1,0 +1,9 @@
+---
+# tasks file for nocaps
+
+- name: CapsLock -> Ctrl configuration
+  become: true
+  blockinfile:
+    dest: "{{ keyboard_config_file }}"
+    block: |
+      XKBOPTIONS="ctrl:nocaps"

@@ -1,0 +1,5 @@
+- name: keyboard configurations
+  hosts: target
+  roles:
+    - name: nocaps
+      role: nocaps

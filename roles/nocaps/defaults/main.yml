@@ -1,0 +1,4 @@
+---
+# defaults file for nocaps
+
+keyboard_config_file: "/etc/default/keyboard"

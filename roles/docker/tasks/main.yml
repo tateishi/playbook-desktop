@@ -1,0 +1,49 @@
+---
+# tasks file for docker
+
+- name: docker_host
+  become: true
+  apt:
+    name:
+      - apt-transport-https
+      - ca-certificates
+      - software-properties-common
+    update_cache: true
+
+- name: add apt-key
+  become: true
+  apt_key:
+    url: "{{ docker.key.url }}"
+    id: "{{ docker.key.id }}"
+    state: present
+
+- name: add repository
+  become: true
+  apt_repository:
+    repo: "{{ docker.repo }}"
+
+- name: install docker ce
+  become: true
+  apt:
+    name: docker-ce
+    update_cache: true
+
+- name: add default user to docker group
+  become: true
+  user:
+    name: "{{ docker_user }}"
+    groups: "{{ docker_group }}"
+    append: true
+
+- name: install docker-compose
+  become: true
+  get_url:
+    url: "{{ docker_compose.url }}"
+    dest: "{{ docker_compose.dest }}"
+    mode: "{{ docker_compose.mode }}"
+
+- name: install python3-docker
+  become: true
+  apt:
+    name: python3-docker
+    update_cache: true
